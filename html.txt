@@ -1,0 +1,32 @@
+                <p id="desc-probioticos">Con bacterias vivas que mejoran tu salud digestiva y defienden tu sistema inmune.</p>
+            </article>
+            <article class="feature" tabindex="0" aria-describedby="desc-sabor">
+                <img class="feature-icon" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/d52b1e/cream.png" alt="Icono de crema y sabor" aria-hidden="true" />
+                <h3>Sabor Auténtico</h3>
+                <p id="desc-sabor">Cremoso, fresco y con ese toque peruano que te hará volver por más.</p>
+            </article>
+        </section>
+        <section class="order-section" aria-label="Sección para realizar pedidos de yogurt YOCOSH">
+            <h2>Realiza tu pedido</h2>
+            <p>Contáctanos y recibe la frescura del yogurt YOCOSH directo a tu hogar, ¡rápido y fácil!</p>
+            <button class="btn-order" id="orderBtn" aria-label="Hacer un pedido de YOCOSH">¡Pedir ahora!</button>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 YOCOSH - Inspirado por Perú. Todos los derechos reservados.
+    </footer>
+<script>
+    const orderBtn = document.getElementById('orderBtn');
+    orderBtn.addEventListener('click', () => {
+        const phone = prompt("Para hacer tu pedido, por favor ingresa tu número telefónico (WhatsApp):");
+        if (phone && phone.trim()) {
+            const message = encodeURIComponent("Hola, quiero hacer un pedido de yogurt YOCOSH.");
+            const whatsappUrl = `https://wa.me/${phone.replace(/\\D/g, '')}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        } else {
+            alert("Número inválido. Intenta de nuevo.");
+        }
+    });
+</script>
+</body>
+</html>
